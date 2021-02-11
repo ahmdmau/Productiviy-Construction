@@ -1,0 +1,35 @@
+part of 'shared.dart';
+
+Future<File> getImage() async {
+  var image = await ImagePicker.platform.pickImage(source: ImageSource.gallery);
+  return File(image.path);
+}
+
+Future<String> uploadImage(File image) async {
+  String fileName = basename(image.path);
+
+  Reference ref = FirebaseStorage.instance.ref().child(fileName);
+  UploadTask task = ref.putFile(image);
+  TaskSnapshot snapshot = await task;
+
+  return await snapshot.ref.getDownloadURL();
+}
+
+TimeOfDay timeConvert(String normTime) {
+  int hour;
+  int minute;
+  String ampm = normTime.substring(normTime.length - 2);
+  String result = normTime.substring(0, normTime.indexOf(' '));
+  if (ampm == 'AM' && int.parse(result.split(":")[1]) != 12) {
+    hour = int.parse(result.split(':')[0]);
+    if (hour == 12) hour = 0;
+    minute = int.parse(result.split(":")[1]);
+  } else {
+    hour = int.parse(result.split(':')[0]) - 12;
+    if (hour <= 0) {
+      hour = 24 + hour;
+    }
+    minute = int.parse(result.split(":")[1]);
+  }
+  return TimeOfDay(hour: hour, minute: minute);
+}

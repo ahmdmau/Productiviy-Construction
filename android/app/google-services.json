@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "618617967219",
+    "project_id": "productivity-construction",
+    "storage_bucket": "productivity-construction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618617967219:android:9f06e45fcbf038051d5006",
+        "android_client_info": {
+          "package_name": "com.example.productivity_contruction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618617967219-l3v0s8f26u4g4q0jhrqt238in67rtb4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJPuw2s0LmpJJGUmrJosOTOkXJvOXrGoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "618617967219-l3v0s8f26u4g4q0jhrqt238in67rtb4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
